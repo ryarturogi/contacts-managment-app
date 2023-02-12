@@ -1,5 +1,4 @@
 import DeleteIcon from '@mui/icons-material/Delete'
-import FilterListIcon from '@mui/icons-material/FilterList'
 import { IconButton, Toolbar, Tooltip, Typography } from '@mui/material'
 import { alpha } from '@mui/material/styles'
 import { ContactsTableToolbarProps } from './types'
@@ -46,13 +45,7 @@ export default function ContactsTableToolbar(props: ContactsTableToolbarProps) {
             <DeleteIcon />
           </IconButton>
         </Tooltip>
-      ) : (
-        <Tooltip title='Filter list'>
-          <IconButton>
-            <FilterListIcon />
-          </IconButton>
-        </Tooltip>
-      )}
+      ) : null}
     </Toolbar>
   )
 }
