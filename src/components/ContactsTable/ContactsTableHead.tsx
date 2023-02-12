@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box'
-import Checkbox from '@mui/material/Checkbox'
 import TableCell from '@mui/material/TableCell'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
@@ -41,14 +40,8 @@ const headCells: readonly HeadCell[] = [
 ]
 
 export default function ContactsTableHead(props: ContactsTableProps) {
-  const {
-    onSelectAllClick,
-    order,
-    orderBy,
-    numSelected,
-    rowCount,
-    onRequestSort,
-  } = props
+  const { order, orderBy, numSelected, rowCount, onRequestSort } = props
+
   const createSortHandler =
     (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property)
@@ -57,17 +50,7 @@ export default function ContactsTableHead(props: ContactsTableProps) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding='checkbox'>
-          <Checkbox
-            color='primary'
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-            inputProps={{
-              'aria-label': 'select all desserts',
-            }}
-          />
-        </TableCell>
+        <TableCell padding='checkbox'></TableCell>
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
