@@ -28,7 +28,7 @@ export const contactsApi: any = createApi({
           const order = _orderBy || 'firstName'
 
           const params = new URLSearchParams({
-            page,
+            page: page + 1,
             perPage,
             _sort: `${order}:${sort}`,
           })
