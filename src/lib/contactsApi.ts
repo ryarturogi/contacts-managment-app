@@ -71,8 +71,8 @@ export const contactsApi: any = createApi({
       },
     }),
     deleteContact: builder.mutation<ContactsData, ContactsData>({
-      query: (contact) => ({
-        url: `contacts/${contact.id}`,
+      query: ({ id }) => ({
+        url: `contacts/${id}`,
         method: 'DELETE',
       }),
     }),
