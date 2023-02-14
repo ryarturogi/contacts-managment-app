@@ -97,6 +97,7 @@ const Sidebar: React.FC = () => {
               height={110}
               alt='logo'
               title={`The Keeper's | Keeping the lights safe`}
+              priority={true}
             />
             <ListItemText
               primary='Keeping the lights safe'
