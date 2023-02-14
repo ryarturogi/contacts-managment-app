@@ -1,22 +1,16 @@
+import { ContactsTableProps, Data, IHeadCell } from '@/types'
 import Box from '@mui/material/Box'
 import TableCell from '@mui/material/TableCell'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import TableSortLabel from '@mui/material/TableSortLabel'
 import { visuallyHidden } from '@mui/utils'
-import { ContactsTableProps, Data, HeadCell } from './types'
 
-const headCells: readonly HeadCell[] = [
-  {
-    id: 'id',
-    numeric: false,
-    disablePadding: true,
-    label: 'ID',
-  },
+const headCells: readonly IHeadCell[] = [
   {
     id: 'firstName',
     numeric: false,
-    disablePadding: true,
+    disablePadding: false,
     label: 'First Name',
   },
   {
@@ -37,10 +31,18 @@ const headCells: readonly HeadCell[] = [
     disablePadding: false,
     label: 'Phone',
   },
+  {
+    id: 'options',
+    numeric: false,
+    disablePadding: true,
+    label: 'Actions',
+  },
 ]
 
-export default function ContactsTableHead(props: ContactsTableProps) {
-  const { order, orderBy, numSelected, rowCount, onRequestSort } = props
+const ContactsTableHead: React.FC<ContactsTableProps> = (
+  props: ContactsTableProps
+) => {
+  const { order, orderBy, onRequestSort } = props
 
   const createSortHandler =
     (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
@@ -50,13 +52,15 @@ export default function ContactsTableHead(props: ContactsTableProps) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding='checkbox'></TableCell>
-        {headCells.map((headCell) => (
+        {headCells.map((headCell, idx) => (
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
+            sx={{
+              pl: idx === 0 ? '2rem' : '1rem',
+            }}
           >
             <TableSortLabel
               active={orderBy === headCell.id}
@@ -76,3 +80,5 @@ export default function ContactsTableHead(props: ContactsTableProps) {
     </TableHead>
   )
 }
+
+export default ContactsTableHead

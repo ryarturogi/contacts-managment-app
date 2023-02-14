@@ -1,5 +1,9 @@
 export type Order = 'asc' | 'desc'
 
+export interface IOptions {
+  [key: string]: string
+}
+
 export interface Data {
   id: string
   firstName: string
@@ -7,9 +11,11 @@ export interface Data {
   email: string
   phone: string
   createdAt: string
+  updatedAt: string
+  options: IOptions
 }
 
-export interface HeadCell {
+export interface IHeadCell {
   disablePadding: boolean
   id: keyof Data
   label: string
@@ -17,7 +23,6 @@ export interface HeadCell {
 }
 
 export interface ContactsTableProps {
-  numSelected: number
   onRequestSort: (
     event: React.MouseEvent<unknown>,
     property: keyof Data
@@ -25,8 +30,4 @@ export interface ContactsTableProps {
   order: Order
   orderBy: string
   rowCount: number
-}
-
-export interface ContactsTableToolbarProps {
-  numSelected: number
 }
