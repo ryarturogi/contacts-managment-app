@@ -1,62 +1,88 @@
-import MailIcon from '@mui/icons-material/Mail'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-import AppBar from '@mui/material/AppBar'
+import Sidebar from '@/components/layout/Sidebar'
 import Box from '@mui/material/Box'
-import Divider from '@mui/material/Divider'
+import CssBaseline from '@mui/material/CssBaseline'
 import Drawer from '@mui/material/Drawer'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
-import Toolbar from '@mui/material/Toolbar'
-import Header from '../layout/Header'
-const drawerWidth = 240
+import React from 'react'
 
-export default function PermanentDrawerLeft(props: any): JSX.Element {
+const drawerWidth = 280
+
+interface Props {
+  window?: () => Window
+  children: React.ReactNode
+}
+
+const DefaultLayout: React.FC<Props> = (props) => {
+  const { window, children } = props
+  const [mobileOpen, setMobileOpen] = React.useState(false)
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen)
+  }
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined
+
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar
-        position='fixed'
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
-      >
-        <Header>
-          <h4>Contacts Management App</h4>
-        </Header>
-      </AppBar>
-      <Drawer
+      <CssBaseline />
+
+      <Box
+        component='nav'
         sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
+          width: { sm: drawerWidth },
+          flexShrink: { sm: 0 },
         }}
-        variant='permanent'
-        anchor='left'
+        aria-label='contacts navigation'
       >
-        <Divider />
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+        <Drawer
+          container={container}
+          variant='temporary'
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+            },
+          }}
+        >
+          <Sidebar />
+        </Drawer>
+        <Drawer
+          variant='permanent'
+          sx={{
+            display: { xs: 'none', sm: 'block' },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+            },
+          }}
+          open
+        >
+          <Sidebar />
+        </Drawer>
+      </Box>
       <Box
         component='main'
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+        sx={{
+          flexGrow: 1,
+          px: 3,
+          width: {
+            sm: `calc(100% - ${drawerWidth}px)`,
+          },
+          backgroundColor: '#f8f8f8',
+          height: '100%',
+          minHeight: '100vh',
+        }}
       >
-        <Toolbar />
-        {props.children}
+        {children}
       </Box>
     </Box>
   )
 }
+
+export default DefaultLayout
