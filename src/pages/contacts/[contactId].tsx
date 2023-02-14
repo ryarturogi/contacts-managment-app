@@ -100,7 +100,7 @@ const ContactDetails: React.FC = () => {
       </Head>
       <Container
         sx={{
-          padding: '1.25rem',
+          padding: '0 1.25rem 1.25rem',
           display: 'flex',
           gap: '0.5rem',
           flexDirection: 'column',

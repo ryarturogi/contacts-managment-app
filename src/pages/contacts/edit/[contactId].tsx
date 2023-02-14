@@ -133,7 +133,7 @@ const UpdateContactForm: React.FC = () => {
               <IconButton onClick={() => router.push('/')}>
                 <Home />
               </IconButton>
-              <Typography color='text.primary'>Contact</Typography>
+              <Typography color='text.primary'>Contact's Detail</Typography>
               <Button
                 color='primary'
                 variant='text'
