@@ -1,38 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Contacts Management App
+
+This is a simple CRUD (Create, Read, Update, and Delete) application designed to manage your contacts effectively. The application is built using modern web technologies such as Next.js, TypeScript, React, Redux-toolkit Query, Formik, Material-UI, and more.
 
 ## Getting Started
 
-First, run the development server:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Prerequisites
+
+Before you start, you need to have Node.js and npm installed on your computer.
+
+## Installing
+
+Clone the repository and install the dependencies.
+
+```
+$ git clone https://github.com/ryarturogi/contacts-managment-app.git
+
+$ cd contacts-management-app
+
+$ yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running the App
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+To start the development server, run the following command.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+$ yarn dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Open your browser and visit http://localhost:3000. You should see the app running.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Deployment
 
-## Learn More
+To build the app for production, run the following command.
 
-To learn more about Next.js, take a look at the following resources:
+```
+$ yarn build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This will compile the app and create a .next directory containing the optimized production build.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To start the production server, run the following command.
 
-## Deploy on Vercel
+```
+$ yarn start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Built With
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js - A React-based framework for building server-side rendering and static web applications.
+- TypeScript - A statically-typed programming language that builds on JavaScript.
+- React - A JavaScript library for building user interfaces.
+- Redux - A predictable state management library for JavaScript applications.
+- Redux Toolkit Query - A set of tools and APIs for simplifying the use of Redux.
+- Formik - A library for building forms with React.
+- Yup - A JavaScript object schema validator and object parser.
+- Material-UI - A popular React UI library that implements Google's Material Design.
+- date-fns - A modern JavaScript library for working with dates.
+- Lodash - A utility library that provides a lot of useful functions for working with arrays, numbers, objects, strings, etc.
+- React Toastify - A React library for adding notification toasts to your app.
+
+### Author
+
+- **Ricardo Guillen I** - [r.arturogi@gmail.com](mailto:r.arturogi@gmail.com)
+
+### Developer thoughts
+
+```
+English:
+
+While developing this project, I learned about Material UI and its use for creating components.
+I gained experience handling POST, DELETE, PUT, and GET requests using the redux-toolkit query.
+The implementation of pagination, including the solution to the zero-based designed TablePagination, was another important aspect that I learned. Additionally, my TypeScript skills were improved as I gained a deeper understanding of types and interfaces. The deployment of the application was done using Vercel, which is a great tool for deploying Next.js applications, and learning how to use it effectively to deploy the application is a must for any developer who wants to build a production-ready application using Next.js and React in general today.
+
+Throughout the learning process, I was continuously challenged and pushed to improve my skills. I faced many difficulties and obstacles, but through persistence and determination, I was able to overcome them and achieve my goals. This project was a great opportunity for me to grow as a developer and gain valuable experience in several important areas. I am very grateful for the opportunity to work on this project and to learn from the experience.
+
+Spanish:
+
+Durante el proceso de desarrollo de este proyecto, aprendí sobre Material UI y su uso para crear componentes. Adquirí experiencia en el manejo de peticiones POST, DELETE, PUT y GET utilizando la consulta redux-toolkit. La implementación de la paginación, incluida la solución a la paginación tablePagination diseñada "cero-based", fue otro aspecto importante que aprendí. Además, mis habilidades en TypeScript mejoraron al tener una comprensión más profunda de los tipos e interfaces utilizados por distintas librerías de uso común. El despliegue de la aplicación se realizó utilizando Vercel, que es una excelente herramienta para desplegar aplicaciones Next.js, y aprender a usarla efectivamente para desplegar la aplicación es un requisito para cualquier desarrollador que desee construir una aplicación lista para producción utilizando Next.js y React en general hoy en día es para mi mandatorio.
+
+A lo largo del proceso de aprendizaje, fui continuamente desafiado y empujado a mejorar mis habilidades. Enfrenté algunas dificultades y obstáculos, pero a través de la persistencia y la determinación, pude superarlos y lograr mis metas. Este proyecto fue una oportunidad mas para crecer como desarrollador y adquirir experiencia valiosa en una serie de áreas importantes. Estoy muy agradecido por la oportunidad de realizar este reto y aprender de la experiencia.
+```
