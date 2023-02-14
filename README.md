@@ -71,11 +71,11 @@ $ yarn start
 ```
 English:
 
-During the process of developing this project, I learned about Material UI and its use for creating components.
-I gained experience in handling POST, DELETE, PUT, and GET requests using the redux-toolkit query.
-The implementation of pagination, including the solution to the zero-based designed tablePagination, was another important aspect that I learned. Additionally, my TypeScript skills were improved as I gained a deeper understanding of types and interfaces. The deployment of the application was done using Vercel, which is a great tool for deploying Next.js applications, and learn how to use it effectively to deploy the application is a must for any developer who wants to build a production-ready application using Next.js and React in general today.
+While developing this project, I learned about Material UI and its use for creating components.
+I gained experience handling POST, DELETE, PUT, and GET requests using the redux-toolkit query.
+The implementation of pagination, including the solution to the zero-based designed TablePagination, was another important aspect that I learned. Additionally, my TypeScript skills were improved as I gained a deeper understanding of types and interfaces. The deployment of the application was done using Vercel, which is a great tool for deploying Next.js applications, and learning how to use it effectively to deploy the application is a must for any developer who wants to build a production-ready application using Next.js and React in general today.
 
-Throughout the learning process, I was continuously challenged and pushed to improve my skills. I faced many difficulties and obstacles, but through persistence and determination, I was able to overcome them and achieve my goals. This project was a great opportunity for me to grow as a developer and to gain valuable experience in a number of important areas. I am very grateful for the opportunity to work on this project and to learn from the experience.
+Throughout the learning process, I was continuously challenged and pushed to improve my skills. I faced many difficulties and obstacles, but through persistence and determination, I was able to overcome them and achieve my goals. This project was a great opportunity for me to grow as a developer and gain valuable experience in several important areas. I am very grateful for the opportunity to work on this project and to learn from the experience.
 
 Spanish:
 
