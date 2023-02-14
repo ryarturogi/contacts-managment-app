@@ -68,8 +68,7 @@ $ yarn start
 
 ### Developer thoughts
 
-```
-English:
+#### English:
 
 While developing this project, I learned about Material UI and its use for creating components.
 I gained experience handling POST, DELETE, PUT, and GET requests using the redux-toolkit query.
@@ -77,9 +76,8 @@ The implementation of pagination, including the solution to the zero-based desig
 
 Throughout the learning process, I was continuously challenged and pushed to improve my skills. I faced many difficulties and obstacles, but through persistence and determination, I was able to overcome them and achieve my goals. This project was a great opportunity for me to grow as a developer and gain valuable experience in several important areas. I am very grateful for the opportunity to work on this project and to learn from the experience.
 
-Spanish:
+#### Spanish:
 
 Durante el proceso de desarrollo de este proyecto, aprendí sobre Material UI y su uso para crear componentes. Adquirí experiencia en el manejo de peticiones POST, DELETE, PUT y GET utilizando la consulta redux-toolkit. La implementación de la paginación, incluida la solución a la paginación tablePagination diseñada "cero-based", fue otro aspecto importante que aprendí. Además, mis habilidades en TypeScript mejoraron al tener una comprensión más profunda de los tipos e interfaces utilizados por distintas librerías de uso común. El despliegue de la aplicación se realizó utilizando Vercel, que es una excelente herramienta para desplegar aplicaciones Next.js, y aprender a usarla efectivamente para desplegar la aplicación es un requisito para cualquier desarrollador que desee construir una aplicación lista para producción utilizando Next.js y React en general hoy en día es para mi mandatorio.
 
 A lo largo del proceso de aprendizaje, fui continuamente desafiado y empujado a mejorar mis habilidades. Enfrenté algunas dificultades y obstáculos, pero a través de la persistencia y la determinación, pude superarlos y lograr mis metas. Este proyecto fue una oportunidad mas para crecer como desarrollador y adquirir experiencia valiosa en una serie de áreas importantes. Estoy muy agradecido por la oportunidad de realizar este reto y aprender de la experiencia.
-```
