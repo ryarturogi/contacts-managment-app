@@ -38,20 +38,22 @@ const ContactsTable: FC = () => {
   const [search, setSearch] = useState<string>('')
   const [isRefetching, setIsSleep] = useState(false)
   const [confirmDelete, setConfirmDelete] = useState(false)
+  const [cachedId, setCachedId] = useState<string | undefined>(undefined)
 
   const [deleteContact] = useDeleteContactMutation()
-  const { data, error, isLoading, isFetching } = useGetContactsListQuery(
-    {
-      page,
-      perPage: rowsPerPage,
-      _sort: order,
-      _orderBy: orderBy,
-      _contains: search || undefined,
-    },
-    {
-      refetchOnMountOrArgChange: true,
-    }
-  )
+  const { data, error, isLoading, isFetching, refetch } =
+    useGetContactsListQuery(
+      {
+        page,
+        perPage: rowsPerPage,
+        _sort: order,
+        _orderBy: orderBy,
+        _contains: search || undefined,
+      },
+      {
+        refetchOnMountOrArgChange: true,
+      }
+    )
 
   const handleRequestSort = (
     event: MouseEvent<unknown>,
@@ -74,10 +76,12 @@ const ContactsTable: FC = () => {
     // validate if user wants to delete
     if (!confirmDelete) {
       setConfirmDelete(true)
+      // cache the id to delete
+      setCachedId(id)
       return
     }
     // if user wants to delete, delete contact
-    const res = await deleteContact({ id })
+    const res = await deleteContact({ id: cachedId || id })
 
     if (res?.data?._id) {
       router.push('/').then(() => {
@@ -92,6 +96,8 @@ const ContactsTable: FC = () => {
       type: 'error',
     })
     setConfirmDelete(false)
+    setCachedId(undefined)
+    refetch()
   }
 
   const isEmpty: Boolean = data?.results?.length === 0
