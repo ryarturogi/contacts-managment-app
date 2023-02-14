@@ -1,3 +1,5 @@
+<img width="1445" alt="image" src="https://user-images.githubusercontent.com/8452197/218767721-59b93976-fb66-4818-9c26-192394b6b2c3.png">
+
 # Contacts Management App
 
 This is a simple CRUD (Create, Read, Update, and Delete) application designed to manage your contacts effectively. The application is built using modern web technologies such as Next.js, TypeScript, React, Redux-toolkit Query, Formik, Material-UI, and more.
