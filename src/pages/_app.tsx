@@ -1,5 +1,7 @@
 import DefaultLayout from '@/components/layout/DefaultLayout'
 import { wrapper } from '@/lib/store'
+import { Provider } from 'react-redux'
+
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import type { AppProps } from 'next/app'
 import { ToastContainer } from 'react-toastify'
@@ -11,19 +13,23 @@ const theme = createTheme({
   },
 })
 
-const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+const App: React.FC<AppProps> = ({ Component, ...rest }) => {
+  const { store, props } = wrapper.useWrappedStore(rest)
+
   return (
-    <ThemeProvider theme={theme}>
-      <DefaultLayout>
-        <Component {...pageProps} />
-        <ToastContainer
-          position='top-right'
-          autoClose={2000}
-          hideProgressBar={true}
-          pauseOnHover={false}
-        />
-      </DefaultLayout>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <DefaultLayout>
+          <Component {...props.pageProps} />
+          <ToastContainer
+            position='top-right'
+            autoClose={2000}
+            hideProgressBar={true}
+            pauseOnHover={false}
+          />
+        </DefaultLayout>
+      </ThemeProvider>
+    </Provider>
   )
 }
-export default wrapper.withRedux(App)
+export default App
