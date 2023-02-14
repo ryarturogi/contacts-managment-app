@@ -1,13 +1,16 @@
+import Box from '@mui/material/Box'
 import { Head, Html, Main, NextScript } from 'next/document'
 
-export default function Document() {
+const Document: React.FC = () => {
   return (
     <Html lang='en'>
       <Head />
-      <body>
+      <Box component={'body'}>
         <Main />
         <NextScript />
-      </body>
+      </Box>
     </Html>
   )
 }
+
+export default Document
