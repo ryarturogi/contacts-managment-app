@@ -31,7 +31,7 @@ import { toast } from 'react-toastify'
 const ContactsTable: FC = () => {
   const router = useRouter()
   const [order, setOrder] = useState<Order>('asc')
-  const [orderBy, setOrderBy] = useState<keyof Data>('updatedAt')
+  const [orderBy, setOrderBy] = useState<keyof Data>('createdAt')
   const [page, setPage] = useState(0)
   const [rows, setRows] = useState<readonly Data[]>([])
   const [rowsPerPage, setRowsPerPage] = useState(10)
@@ -69,6 +69,7 @@ const ContactsTable: FC = () => {
   }
 
   const handleOnSearch = (search: string) => {
+    setPage(0)
     setSearch(search)
   }
 
