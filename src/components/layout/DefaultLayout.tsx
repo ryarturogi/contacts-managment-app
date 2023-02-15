@@ -52,6 +52,7 @@ export default function ResponsiveDrawer(props: Props) {
         sx={{
           display: { sm: 'block', md: 'flex' },
           backgroundColor: '#f5f5f5',
+          minHeight: '100vh',
         }}
         component='section'
       >
@@ -165,8 +166,6 @@ export default function ResponsiveDrawer(props: Props) {
               width: '100%',
               maxWidth: { xs: '100%', md: '72rem' },
               position: 'relative',
-
-              minHeight: '100vh',
             }}
           >
             {props.children}
