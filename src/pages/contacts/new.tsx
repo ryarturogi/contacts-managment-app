@@ -82,7 +82,7 @@ const CreateContactForm: React.FC = () => {
           })}
         >
           {(props: FormikProps<IContactFormForm>) => {
-            return <CustomForm {...props} title='Create Member' />
+            return <CustomForm {...props} title='Create' />
           }}
         </Formik>
       </Container>

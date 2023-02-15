@@ -160,7 +160,7 @@ export default function ResponsiveDrawer(props: Props) {
           <Box
             sx={{
               flex: '1 1 50%',
-              px: { xs: 0, md: 3 },
+              px: { xs: 2, md: 3 },
               borderRadius: { xs: '0 0 1rem 1rem', md: '1rem' },
               width: '100%',
               maxWidth: { xs: '100%', md: '72rem' },

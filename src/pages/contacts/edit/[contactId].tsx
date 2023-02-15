@@ -130,7 +130,7 @@ const UpdateContactForm: React.FC = () => {
             if (!isFetching) {
               return (
                 <>
-                  <CustomForm {...props} title='Update Contact' />
+                  <CustomForm {...props} title='Update' />
                 </>
               )
             }
