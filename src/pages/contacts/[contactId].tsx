@@ -3,16 +3,14 @@ import {
   useDeleteContactMutation,
   useGetContactDetailsQuery,
 } from '@/lib/contactsApi'
-import { Cancel, Delete, Home } from '@mui/icons-material'
+import { Cancel, Delete } from '@mui/icons-material'
 import {
   Avatar,
   Box,
-  Breadcrumbs,
   Button,
   Card,
   CircularProgress,
   Container,
-  IconButton,
   Modal,
   Typography,
 } from '@mui/material'
@@ -101,66 +99,40 @@ const ContactDetails: React.FC = () => {
       <Container
         sx={{
           padding: '0 1.25rem 1.25rem',
-          display: 'flex',
           gap: '0.5rem',
-          flexDirection: 'column',
-          margin: 0,
+          margin: '2rem 0 0 0',
         }}
       >
-        <Box
-          sx={{
-            padding: '1rem',
-            paddingLeft: '0',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          <Box
-            sx={{
-              backgroundColor: 'background.paper',
-              padding: '0.5rem',
-              borderRadius: '0.75rem',
-              maxWidth: '60ch',
-            }}
-          >
-            <Breadcrumbs aria-label='breadcrumb'>
-              <IconButton onClick={() => router.push('/')}>
-                <Home />
-              </IconButton>
-              <Typography color='text.primary'>Contact's Detail</Typography>
-              <Typography
-                variant='body1'
-                fontWeight={600}
-                sx={{ textTransform: 'capitalize', color: 'primary.main' }}
-              >
-                {data?.firstName} {data?.lastName}
-              </Typography>
-            </Breadcrumbs>
-          </Box>
-        </Box>
-
         <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
             gap: '1rem',
-            backgroundColor: 'background.paper',
-            padding: '1rem',
-            borderRadius: '0.75rem',
-            maxWidth: '60ch',
           }}
           component='section'
         >
           <Box
             sx={{
-              display: 'flex',
+              display: { xs: 'block', sm: 'flex', md: 'flex' },
               justifyContent: 'start',
               gap: '2rem',
               alignItems: 'start',
+              backgroundColor: 'background.paper',
+              padding: '1rem',
+              borderRadius: '0.75rem',
+              maxWidth: '500px',
+              position: 'relative',
             }}
-            component='header'
+            component='section'
           >
-            <Avatar sx={{ width: '100px', height: '100px' }}>
+            <Avatar
+              sx={{
+                width: { xs: '50px', sm: '80px', md: '100px' },
+                height: { xs: '50px', sm: '80px', md: '100px' },
+                fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3rem' },
+                mb: { xs: '1rem', sm: '0', md: '0' },
+              }}
+            >
               {data?.firstName[0]}
             </Avatar>
             <Box
@@ -189,13 +161,77 @@ const ContactDetails: React.FC = () => {
 
             <Box
               sx={{
-                ml: 'auto',
-                display: 'flex',
-                gap: '0.5rem',
-                alignItems: 'center',
+                position: 'absolute',
+                top: '0.5rem',
+                right: '0.5rem',
               }}
             >
               <ActionsMenu id={data?._id} onDelete={handleDelete} isSingle />
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'start',
+              flexDirection: 'column',
+              gap: '2rem',
+              alignItems: 'start',
+              backgroundColor: 'background.paper',
+              padding: '1.25rem 2rem',
+              borderRadius: '0.75rem',
+              maxWidth: '500px',
+            }}
+            component='section'
+          >
+            <Box
+              sx={{
+                display: { xs: 'block', sm: 'flex', md: 'flex' },
+                gap: '2rem',
+                alignItems: 'center',
+              }}
+              component='section'
+            >
+              <Typography variant='h6' color='inherit'>
+                <strong>Country</strong>
+              </Typography>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '100%',
+                }}
+              >
+                <Typography variant='body1' color='inherit'>
+                  Dominican Republic
+                </Typography>
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                display: { xs: 'block', sm: 'flex', md: 'flex' },
+                gap: '2rem',
+              }}
+              component='section'
+            >
+              <Typography variant='h6' color='inherit'>
+                <strong>Address</strong>
+              </Typography>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.5rem',
+                  width: '100%',
+                }}
+              >
+                <Typography variant='body1' color='inherit'>
+                  Sample Address 1
+                </Typography>
+                <Typography variant='body1' color='inherit'>
+                  Sample Address 2
+                </Typography>
+              </Box>
             </Box>
           </Box>
         </Box>

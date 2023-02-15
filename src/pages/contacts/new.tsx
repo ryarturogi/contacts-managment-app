@@ -1,7 +1,5 @@
 import { useCreateContactMutation } from '@/lib/contactsApi'
-import { Home } from '@mui/icons-material'
-import { Breadcrumbs, Container, IconButton, Typography } from '@mui/material'
-import { Box } from '@mui/system'
+import { Container } from '@mui/material'
 import { Formik, FormikProps } from 'formik'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -9,7 +7,6 @@ import React from 'react'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import CustomForm from '../../components/Form/index'
-
 interface IContactFormForm {
   firstName: string
   lastName: string
@@ -60,33 +57,9 @@ const CreateContactForm: React.FC = () => {
           display: 'flex',
           flexDirection: 'column',
           padding: '0 0.5rem',
-          margin: 0,
+          marginTop: 5,
         }}
       >
-        <Box
-          sx={{
-            padding: '1rem',
-            paddingLeft: '0',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          <Box
-            sx={{
-              backgroundColor: 'background.paper',
-              padding: '0.5rem',
-              borderRadius: '0.75rem',
-              maxWidth: '60ch',
-            }}
-          >
-            <Breadcrumbs aria-label='breadcrumb'>
-              <IconButton onClick={() => router.push('/')}>
-                <Home />
-              </IconButton>
-              <Typography color='text.primary'>Create Member</Typography>
-            </Breadcrumbs>
-          </Box>
-        </Box>
         <Formik
           enableReinitialize={true}
           initialValues={{
