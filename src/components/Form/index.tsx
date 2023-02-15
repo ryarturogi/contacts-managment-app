@@ -1,5 +1,6 @@
 import { Box, Button, FormControl, TextField, Typography } from '@mui/material'
 import { Form } from 'formik'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 interface Props {
@@ -13,8 +14,11 @@ interface Props {
 }
 
 const CustomForm: React.FC<Props> = (props: Props) => {
+  const router = useRouter()
   const { values, errors, touched, handleChange, handleBlur, isSubmitting } =
     props
+
+  const hasError = Object.keys(errors).length > 0
 
   return (
     <Form>
@@ -34,7 +38,7 @@ const CustomForm: React.FC<Props> = (props: Props) => {
           fontSize={24}
           sx={{ margin: '0 auto 1.5rem', textAlign: 'left' }}
         >
-          {props.title}
+          {props.title} Contact
         </Typography>
         <Box
           sx={{
@@ -108,55 +112,55 @@ const CustomForm: React.FC<Props> = (props: Props) => {
               <div style={{ color: 'red' }}>{errors.phone}</div>
             )}
           </FormControl>
-
-          <Button
-            type='submit'
-            variant={
-              errors.firstName ||
-              errors.lastName ||
-              errors.email ||
-              errors.phone
-                ? 'outlined'
-                : 'contained'
-            }
-            color={
-              errors.firstName ||
-              errors.lastName ||
-              errors.email ||
-              errors.phone
-                ? 'error'
-                : 'primary'
-            }
-            size='large'
-            disabled={isSubmitting}
-            sx={{
-              cursor: `${
-                errors.firstName ||
-                errors.lastName ||
-                errors.email ||
-                errors.phone
-                  ? 'not-allowed'
-                  : 'default'
-              }`,
-            }}
-            title={
-              errors.firstName ||
-              errors.lastName ||
-              errors.email ||
-              errors.phone
-                ? 'Please fill all the fields'
-                : ''
-            }
-          >
-            <Typography
-              variant='button'
-              fontSize={20}
-              fontWeight={600}
-              textTransform='capitalize'
+          <Box sx={{ display: 'flex', gap: 1.5 }}>
+            {/* cancel button */}
+            <Button
+              type='button'
+              variant='outlined'
+              color='inherit'
+              size='large'
+              disabled={isSubmitting}
+              sx={{
+                cursor: `${hasError ? 'not-allowed' : 'default'}`,
+              }}
+              title={hasError ? 'Please fill all the fields' : ''}
+              fullWidth
+              onClick={() => {
+                router.back()
+              }}
             >
-              {props.title}
-            </Typography>
-          </Button>
+              <Typography
+                variant='button'
+                fontSize={20}
+                fontWeight={600}
+                textTransform='capitalize'
+              >
+                Cancel
+              </Typography>
+            </Button>
+
+            <Button
+              type='submit'
+              variant={'contained'}
+              color={hasError ? 'error' : 'primary'}
+              size='large'
+              disabled={isSubmitting}
+              sx={{
+                cursor: `${hasError ? 'not-allowed' : 'default'}`,
+              }}
+              title={hasError ? 'Please fill all the fields' : ''}
+              fullWidth
+            >
+              <Typography
+                variant='button'
+                fontSize={20}
+                fontWeight={600}
+                textTransform='capitalize'
+              >
+                {props.title}
+              </Typography>
+            </Button>
+          </Box>
         </Box>
       </Box>
     </Form>
