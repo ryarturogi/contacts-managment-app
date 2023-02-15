@@ -184,7 +184,10 @@ const ContactsTable: FC = () => {
             mb: 2,
             borderRadius: '1rem',
             height: '100%',
-            maxHeight: 'calc(100vh - 250px)',
+            maxHeight: {
+              xs: 'calc(100vh - 250px)',
+              md: 'calc(100vh - 200px)',
+            },
             overflow: 'auto',
           }}
         >
