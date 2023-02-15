@@ -16,7 +16,7 @@ import { styled } from '@mui/material/styles'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import * as React from 'react'
-import SidebarItem from './Sidebar/SidebarItem'
+import SidebarItem from './SidebarItem'
 
 const data = [
   {
