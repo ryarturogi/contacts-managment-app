@@ -1,6 +1,7 @@
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 import SearchIcon from '@mui/icons-material/Search'
 import {
+  Box,
   Button,
   InputAdornment,
   TextField,
@@ -9,6 +10,7 @@ import {
 } from '@mui/material'
 import { debounce } from 'lodash'
 import { useRouter } from 'next/router'
+
 interface ContactsTableToolbarProps {
   onSearch: (search: string) => void
 }
@@ -24,64 +26,92 @@ const ContactsTableToolbar: React.FC<ContactsTableToolbarProps> = (
   }, 500)
 
   return (
-    <Toolbar
-      sx={{
-        pl: { sm: 2 },
-        pr: { xs: 1, sm: 1 },
-        py: { xs: 2, sm: 3 },
-      }}
-    >
-      <Typography
-        sx={{ flex: '1 1 100%' }}
-        variant={'h4' /* variantMapping={{ sm: 'h1', xs: 'h2' }} */}
-        id='tableTitle'
-        component='h1'
-        fontWeight={700}
-      >
-        Members
-      </Typography>
-      <TextField
-        id='search'
-        label='Search'
-        variant='outlined'
-        size='small'
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position='start'>
-              <SearchIcon color='primary' />
-            </InputAdornment>
-          ),
-          placeholder: 'e.g. email@example.com',
-        }}
-        sx={{ width: '100%', maxWith: '400px', background: '#fff' }}
-        onChange={handleSearch}
-      />
-      <Button
-        aria-label='new member'
+    <>
+      <Toolbar
         sx={{
-          ml: 1,
-          background: '#fff',
-          maxWidth: 'fit-content',
-          py: 0.85,
+          mt: 2,
+          mb: { xs: 3, md: 1 },
+          gap: 2,
           display: 'flex',
-          gap: 1,
-
-          borderRadius: '0.30rem',
-          border: '1px solid #ccc',
-          '&:hover': {
-            background: '#fff',
-            border: '1px solid #222',
-          },
+          flexDirection: { xs: 'column', md: 'row' },
+          justifyContent: 'space-between',
+          alignItems: { xs: 'flex-start', md: 'center' },
+          minHeight: { xs: 'auto', md: '50px' },
+          // pt: { xs: 2, md: 0 },
         }}
-        onClick={() => router.push('/contacts/new')}
-        title='New Member'
-        variant='outlined'
-        fullWidth
       >
-        <AddCircleOutlineIcon color='primary' />
-        New Member
-      </Button>
-    </Toolbar>
+        <Box sx={{ display: 'flex', flex: '1', alignItems: 'center' }}>
+          <Typography
+            id='tableTitle'
+            component='h1'
+            fontWeight={700}
+            sx={{
+              fontSize: { xs: '1.5rem', md: '1.75rem' },
+              color: 'primary.primary',
+              display: { xs: 'none', md: 'block' },
+            }}
+          >
+            Members
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{
+            display: 'flex',
+            gap: { xs: 1, sm: 2 },
+            width: '100%',
+            flex: '1 1 40%',
+          }}
+        >
+          <TextField
+            id='search'
+            label='Search'
+            variant='outlined'
+            size='small'
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position='start'>
+                  <SearchIcon color='primary' />
+                </InputAdornment>
+              ),
+              placeholder: 'e.g. email@example.com',
+            }}
+            sx={{ width: '100%', maxWith: '400px', background: '#fff' }}
+            onChange={handleSearch}
+          />
+          <Button
+            aria-label='new member'
+            sx={{
+              background: '#fff',
+              maxWidth: 'fit-content',
+              py: 0.85,
+              display: 'flex',
+              gap: 1,
+
+              borderRadius: '0.30rem',
+              border: '1px solid #ccc',
+              '&:hover': {
+                background: '#fff',
+                border: '1px solid #222',
+              },
+            }}
+            onClick={() => router.push('/contacts/new')}
+            title='New Member'
+            variant='outlined'
+            fullWidth
+          >
+            <AddCircleOutlineIcon color='primary' />
+            <Typography
+              variant='body2'
+              fontWeight={600}
+              sx={{ display: { xs: 'none', lg: 'block' } }}
+            >
+              New Member
+            </Typography>
+          </Button>
+        </Box>
+      </Toolbar>
+    </>
   )
 }
 

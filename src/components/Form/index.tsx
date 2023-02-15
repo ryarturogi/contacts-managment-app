@@ -22,7 +22,9 @@ const CustomForm: React.FC<Props> = (props: Props) => {
         sx={{
           background: '#fff',
           padding: '1.5rem 1.25rem 2.5rem',
-          width: '60ch',
+          width: '100%',
+          maxWidth: '400px',
+          minWidth: '300px',
           borderRadius: '1rem',
         }}
       >
@@ -40,7 +42,7 @@ const CustomForm: React.FC<Props> = (props: Props) => {
             gridTemplateColumns: '1fr',
             gap: 2.25,
             width: '100%',
-            maxWidth: '60ch',
+            maxWidth: '400px',
           }}
         >
           <FormControl>

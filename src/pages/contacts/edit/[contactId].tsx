@@ -3,15 +3,7 @@ import {
   useGetContactDetailsQuery,
   useUpdateContactMutation,
 } from '@/lib/contactsApi'
-import { Home } from '@mui/icons-material'
-import {
-  Breadcrumbs,
-  Button,
-  Container,
-  IconButton,
-  Typography,
-} from '@mui/material'
-import { Box } from '@mui/system'
+import { Container } from '@mui/material'
 import { Formik, FormikProps } from 'formik'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -110,48 +102,9 @@ const UpdateContactForm: React.FC = () => {
           display: 'flex',
           flexDirection: 'column',
           padding: '0 0.5rem',
-          margin: 0,
+          marginTop: 5,
         }}
       >
-        <Box
-          sx={{
-            padding: '1rem',
-            paddingLeft: '0',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          <Box
-            sx={{
-              backgroundColor: 'background.paper',
-              padding: '0.5rem',
-              borderRadius: '0.75rem',
-              maxWidth: '60ch',
-            }}
-          >
-            <Breadcrumbs aria-label='breadcrumb'>
-              <IconButton onClick={() => router.push('/')}>
-                <Home />
-              </IconButton>
-              <Typography color='text.primary'>Contact's Detail</Typography>
-              <Button
-                color='primary'
-                variant='text'
-                onClick={() => router.push(`/contacts/${contactId}`)}
-                sx={{ textTransform: 'capitalize' }}
-              >
-                <Typography
-                  variant='body1'
-                  sx={{ textTransform: 'capitalize', color: 'primary.main' }}
-                >
-                  {data?.firstName} {data?.lastName}
-                </Typography>
-              </Button>
-              <Typography color='text.primary'>Update Contact</Typography>
-            </Breadcrumbs>
-          </Box>
-        </Box>
-
         <Formik
           enableReinitialize={true}
           initialValues={{

@@ -1,14 +1,13 @@
-import Box from '@mui/material/Box'
 import { Head, Html, Main, NextScript } from 'next/document'
 
 const Document: React.FC = () => {
   return (
     <Html lang='en'>
       <Head />
-      <Box component={'body'}>
+      <body>
         <Main />
         <NextScript />
-      </Box>
+      </body>
     </Html>
   )
 }

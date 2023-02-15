@@ -173,16 +173,18 @@ const ContactsTable: FC = () => {
 
   return (
     <>
-      <Box sx={{ width: '100%', marginTop: '20px', maxWidth: '120ch' }}>
+      <Box sx={{ width: '100%', maxWidth: '72rem', pt: { md: 2 } }}>
         <ContactsTableToolbar onSearch={handleOnSearch} />
+
         <Divider sx={{ marginBottom: '1rem' }} />
+
         <Paper
           sx={{
             width: '100%',
             mb: 2,
             borderRadius: '1rem',
             height: '100%',
-            maxHeight: 'calc(100vh - 160px)',
+            maxHeight: 'calc(100vh - 250px)',
             overflow: 'auto',
           }}
         >
@@ -334,9 +336,11 @@ const ContactsTable: FC = () => {
             <Typography variant='h5' color='inherit' fontWeight={600}>
               Are you sure?
             </Typography>
+
             <Typography variant='body1' color='inherit'>
               This action cannot be undone.
             </Typography>
+
             <Box
               sx={{
                 display: 'flex',
@@ -364,6 +368,7 @@ const ContactsTable: FC = () => {
                   Delete
                 </Typography>
               </Button>
+
               <Button
                 variant='contained'
                 color='primary'
