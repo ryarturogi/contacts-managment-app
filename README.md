@@ -4,6 +4,22 @@
 
 This is a simple CRUD (Create, Read, Update, and Delete) application designed to manage your contacts effectively. The application is built using modern web technologies such as Next.js, TypeScript, React, Redux-toolkit Query, Formik, Material-UI, and more.
 
+### Developer thoughts
+
+#### English:
+
+While developing this project, I learned about Material UI and its use for creating components.
+I gained experience handling POST, DELETE, PUT, and GET requests using the redux-toolkit query.
+The implementation of pagination, including the solution to the zero-based designed TablePagination, was another important aspect that I learned. Additionally, my TypeScript skills were improved as I gained a deeper understanding of types and interfaces. The deployment of the application was done using Vercel, which is a great tool for deploying Next.js applications, and learning how to use it effectively to deploy the application is a must for any developer who wants to build a production-ready application using Next.js and React in general today.
+
+Throughout the learning process, I was continuously challenged and pushed to improve my skills. I faced many difficulties and obstacles, but through persistence and determination, I was able to overcome them and achieve my goals. This project was a great opportunity for me to grow as a developer and gain valuable experience in several important areas. I am very grateful for the opportunity to work on this project and to learn from the experience.
+
+#### Spanish:
+
+Durante el proceso de desarrollo de este proyecto, aprendí sobre Material UI y su uso para crear componentes. Adquirí experiencia en el manejo de peticiones POST, DELETE, PUT y GET utilizando la consulta redux-toolkit. La implementación de la paginación, incluida la solución a la paginación tablePagination diseñada "cero-based", fue otro aspecto importante que aprendí. Además, mis habilidades en TypeScript mejoraron al tener una comprensión más profunda de los tipos e interfaces utilizados por distintas librerías de uso común. El despliegue de la aplicación se realizó utilizando Vercel, que es una excelente herramienta para desplegar aplicaciones Next.js, y aprender a usarla efectivamente para desplegar la aplicación es un requisito para cualquier desarrollador que desee construir una aplicación lista para producción utilizando Next.js y React en general hoy en día es para mi mandatorio.
+
+A lo largo del proceso de aprendizaje, fui continuamente desafiado y empujado a mejorar mis habilidades. Enfrenté algunas dificultades y obstáculos, pero a través de la persistencia y la determinación, pude superarlos y lograr mis metas. Este proyecto fue una oportunidad mas para crecer como desarrollador y adquirir experiencia valiosa en una serie de áreas importantes. Estoy muy agradecido por la oportunidad de realizar este reto y aprender de la experiencia.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -68,18 +84,6 @@ $ yarn start
 
 - **Ricardo Guillen I** - [r.arturogi@gmail.com](mailto:r.arturogi@gmail.com)
 
-### Developer thoughts
+## License
 
-#### English:
-
-While developing this project, I learned about Material UI and its use for creating components.
-I gained experience handling POST, DELETE, PUT, and GET requests using the redux-toolkit query.
-The implementation of pagination, including the solution to the zero-based designed TablePagination, was another important aspect that I learned. Additionally, my TypeScript skills were improved as I gained a deeper understanding of types and interfaces. The deployment of the application was done using Vercel, which is a great tool for deploying Next.js applications, and learning how to use it effectively to deploy the application is a must for any developer who wants to build a production-ready application using Next.js and React in general today.
-
-Throughout the learning process, I was continuously challenged and pushed to improve my skills. I faced many difficulties and obstacles, but through persistence and determination, I was able to overcome them and achieve my goals. This project was a great opportunity for me to grow as a developer and gain valuable experience in several important areas. I am very grateful for the opportunity to work on this project and to learn from the experience.
-
-#### Spanish:
-
-Durante el proceso de desarrollo de este proyecto, aprendí sobre Material UI y su uso para crear componentes. Adquirí experiencia en el manejo de peticiones POST, DELETE, PUT y GET utilizando la consulta redux-toolkit. La implementación de la paginación, incluida la solución a la paginación tablePagination diseñada "cero-based", fue otro aspecto importante que aprendí. Además, mis habilidades en TypeScript mejoraron al tener una comprensión más profunda de los tipos e interfaces utilizados por distintas librerías de uso común. El despliegue de la aplicación se realizó utilizando Vercel, que es una excelente herramienta para desplegar aplicaciones Next.js, y aprender a usarla efectivamente para desplegar la aplicación es un requisito para cualquier desarrollador que desee construir una aplicación lista para producción utilizando Next.js y React en general hoy en día es para mi mandatorio.
-
-A lo largo del proceso de aprendizaje, fui continuamente desafiado y empujado a mejorar mis habilidades. Enfrenté algunas dificultades y obstáculos, pero a través de la persistencia y la determinación, pude superarlos y lograr mis metas. Este proyecto fue una oportunidad mas para crecer como desarrollador y adquirir experiencia valiosa en una serie de áreas importantes. Estoy muy agradecido por la oportunidad de realizar este reto y aprender de la experiencia.
+This library is released under the MIT License. See the LICENSE file for more details.
